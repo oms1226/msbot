@@ -1,0 +1,34 @@
+BEGIN_FUNCTION_MAP
+	.Func,해외선물관심종목조회(o3107)-API용,o3107,attr,block,svr=OVS,headtype=A;
+	BEGIN_DATA_MAP
+	o3107InBlock,기본입력,input,occurs;
+	begin
+		종목심볼,symbol,symbol,char,8;
+	end
+	o3107OutBlock,출력,output,occurs;
+	begin
+		종목코드,symbol,symbol,char,8;
+		종목명,symbolname,symbolname,char,50;
+		현재가,price,price,double,15.8;
+		전일대비구분,sign,sign,char,1;
+		전일대비,change,change,double,15.8;
+		등락율,diff,diff,double,6.2;
+		누적거래량,volume,volume,long,10;
+		전일종가,jnilclose,jnilclose,double,15.8;
+		시가,open,open,double,15.8;
+		고가,high,high,double,15.8;
+		저가,low,low,double,15.8;
+		매도호가1,offerho1,offerho1,double,15.8;
+		매수호가1,bidho1,bidho1,double,15.8;
+		매도호가건수1,offercnt1,offercnt1,long,10;
+		매수호가건수1,bidcnt1,bidcnt1,long,10;
+		매도호가수량1,offerrem1,offerrem1,long,10;
+		매수호가수량1,bidrem1,bidrem1,long,10;
+		매도호가건수합,offercnt,offercnt,long,10;
+		매수호가건수합,bidcnt,bidcnt,long,10;
+		매도호가수량합,offer,offer,long,10;
+		매수호가수량합,bid,bid,long,10;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP
+

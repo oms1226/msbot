@@ -1,0 +1,25 @@
+BEGIN_FUNCTION_MAP
+	.Func,해외선물일별체결조회(o3104)-API용,o3104,attr,block,svr=OVS,headtype=A;
+	BEGIN_DATA_MAP
+	o3104InBlock,기본입력,input;
+	begin
+		조회구분,gubun,gubun,char,1;
+		단축코드,shcode,shcode,char,8;
+		조회일자,date,date,char,8;
+	end
+	o3104OutBlock1,출력1,output,occurs;
+	begin
+		일자,chedate,chedate,char,8;
+		현재가,price,price,double,15.8;
+		대비구분,sign,sign,char,1;
+		대비,change,change,double,15.8;
+		등락율,diff,diff,float,6.2;
+		시가,open,open,double,15.8;
+		고가,high,high,double,15.8;
+		저가,low,low,double,15.8;
+		체결구분,cgubun,cgubun,char,1;
+		누적거래량,volume,volume,long,10;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP
+

@@ -1,0 +1,41 @@
+BEGIN_FUNCTION_MAP
+	.Func,해외선물차트(일주월)(o3108)-API용,o3108,attr,block,svr=OVS,headtype=A;
+	BEGIN_DATA_MAP
+	o3108InBlock,기본입력,input;
+	begin
+		단축코드,shcode,shcode,char,16;
+		주기구분,gubun,gubun,char,1;
+		요청건수,qrycnt,qrycnt,long,4;
+		시작일자,sdate,sdate,char,8;
+		종료일자,edate,edate,char,8;
+		연속일자,cts_date,cts_date,char,8;
+	end
+	o3108OutBlock,출력,output;
+	begin
+		단축코드,shcode,shcode,char,16;
+		전일시가,jisiga,jisiga,double,15.8;
+		전일고가,jihigh,jihigh,double,15.8;
+		전일저가,jilow,jilow,double,15.8;
+		전일종가,jiclose,jiclose,double,15.8;
+		전일거래량,jivolume,jivolume,long,12;
+		당일시가,disiga,disiga,double,15.8;
+		당일고가,dihigh,dihigh,double,15.8;
+		당일저가,dilow,dilow,double,15.8;
+		당일종가,diclose,diclose,double,15.8;
+		장시작시간,mk_stime,mk_stime,char,6;
+		장마감시간,mk_etime,mk_etime,char,6;
+		연속일자,cts_date,cts_date,char,8;
+		레코드카운트,rec_count,rec_count,long,7;
+	end
+	o3108OutBlock1,출력1,output,occurs;
+	begin
+		날짜,date,date,char,8;
+		시가,open,open,double,15.8;
+		고가,high,high,double,15.8;
+		저가,low,low,double,15.8;
+		종가,close,close,double,15.8;
+		거래량,volume,volume,long,12;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP
+

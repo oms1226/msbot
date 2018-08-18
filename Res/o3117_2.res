@@ -1,0 +1,31 @@
+BEGIN_FUNCTION_MAP
+	.Func,해외선물차트용NTick(o3117)-API용,o3117,attr,block,headtype=A;
+	BEGIN_DATA_MAP
+	o3117InBlock,기본입력,input;
+	begin
+		단축코드,shcode,shcode,char,8;
+		단위,ncnt,ncnt,long,4;
+		건수,qrycnt,qrycnt,long,4;
+		연속시간,cts_seq,cts_seq,char,10;
+		연속당일구분,cts_daygb,cts_daygb,char,2;
+	end
+	o3117OutBlock,출력,output;
+	begin
+		단축코드,shcode,shcode,char,8;
+		레코드카운트,rec_count,rec_count,long,7;
+		연속시간,cts_seq,cts_seq,char,10;
+		연속당일구분,cts_daygb,cts_daygb,char,2;
+	end
+	o3117OutBlock1,출력1,output,occurs;
+	begin
+		날짜,date,date,char,8;
+		시간,time,time,char,6;
+		시가,open,open,double,15.8;
+		고가,high,high,double,15.8;
+		저가,low,low,double,15.8;
+		종가,close,close,double,15.8;
+		거래량,volume,volume,long,12;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP
+

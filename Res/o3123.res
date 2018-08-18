@@ -1,0 +1,33 @@
+BEGIN_FUNCTION_MAP
+	.Func,해외선물옵션차트(분)(o3123)-API용,o3123,attr,block,headtype=A;
+	BEGIN_DATA_MAP
+	o3123InBlock,기본입력,input;
+	begin
+		시장구분,mktgb,mktgb,char,1;
+		단축코드,shcode,shcode,char,16;
+		N분주기,ncnt,ncnt,long,4;
+		조회건수,readcnt,readcnt,long,4;
+		연속일자,cts_date,cts_date,char,8;
+		연속시간,cts_time,cts_time,char,6;
+	end
+	o3123OutBlock,출력,output;
+	begin
+		단축코드,shcode,shcode,char,16;
+		시차,timediff,timediff,long,4;
+		조회건수,readcnt,readcnt,long,4;
+		연속일자,cts_date,cts_date,char,8;
+		연속시간,cts_time,cts_time,char,6;
+	end
+	o3123OutBlock1,출력1,output,occurs;
+	begin
+		날짜,date,date,char,8;
+		현지시간,time,time,char,6;
+		시가,open,open,double,15.8;
+		고가,high,high,double,15.8;
+		저가,low,low,double,15.8;
+		종가,close,close,double,15.8;
+		거래량,volume,volume,long,12;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP
+
