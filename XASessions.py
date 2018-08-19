@@ -7,6 +7,9 @@ import pythoncom
 import inspect
 
 class XASessionEvents(object):
+    """
+    https://www.youtube.com/watch?v=XAfq6Des0bI&list=PLKuN_z83AuF0I0dRIJmNAsFvi1DGiLTm9&index=13
+    """
     def __init__(self):
         self.parent = None
 
@@ -36,6 +39,11 @@ class XASession:
             self.ActiveX.set_parent(parent=parent)
 
     def login(self, url='demo.ebestsec.co.kr', port=200001, svrtype=0, id='userid', pwd='password', cert='공인인증 비밀번호'):
+        """
+        https://www.youtube.com/watch?v=XAfq6Des0bI&list=PLKuN_z83AuF0I0dRIJmNAsFvi1DGiLTm9&index=13 //[13강] 파이썬 기본 강의 -xingAPI를 이용한 로그인1
+        https://www.youtube.com/watch?v=Qtd-zUnZZbk&list=PLKuN_z83AuF0I0dRIJmNAsFvi1DGiLTm9&index=12 //[13강] 파이썬 기본 강의 -xingAPI를 이용한 로그인2
+        2 xingAPI COM 개발가이드.pdf
+        """
         result = self.ActiveX.ConnectServer(url, port)
         if not result:
             nErrCode = self.ActiveX.GetLastError()
