@@ -1,0 +1,5 @@
+- 본 프로그램은 개인 목적으로만 사용할 수 있습니다. 어떠한 경우에도 재판매 되거나 저작권자의 동의 없이 재배포될 수 없습니다. 또한 본 프로그램의 일부만을 변경하여 재배포할 수 없습니다. 재배포시 반드시 mymoneybot170@gmail.com 로 문의 바랍니다. 
+
+- 본 프로그램의 업데이트, 오류제보, 문의 사항은 www.thinkalgo.co.kr  을 이용해 주시기 바랍니다. 
+
+Copyright(c) 2018 thinkalgo.co.kr All rights reserved. 
