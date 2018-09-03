@@ -1708,7 +1708,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     # ------------------------------------------------------------------------------------------------------------------
     def MyLogin(self):
-        계좌정보 = pd.read_csv("secret/passwords.csv", converters={'계좌번호': str, '거래비밀번호': str})
+        계좌정보 = pd.read_csv("secret/passwords_oms1226.csv", converters={'계좌번호': str, '거래비밀번호': str, '비밀번호': str})
         주식계좌정보 = 계좌정보.query("구분 == '거래'")
 
         if len(주식계좌정보) > 0:
