@@ -12,6 +12,7 @@ def ToTelegram(str):
     global CHAT_ID
 
     if TELEGRAM_TOKEN == '':
+        # t.me/omsStockBot
         with open('secret/telegram_token.txt', mode='r') as tokenfile:
             TELEGRAM_TOKEN = tokenfile.readline().strip()
 
