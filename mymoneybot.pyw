@@ -1473,7 +1473,8 @@ class 화면_버전(QDialog, Ui_버전):
 Ui_MainWindow, QtBaseClass_MainWindow = uic.loadUiType(UI_DIR+"mymoneybot.ui")
 
 class MainWindow(QMainWindow, Ui_MainWindow):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, autoMode = False, *args, **kwargs):
+        self.mAutoMode = autoMode
         super(MainWindow, self).__init__(*args, **kwargs)
         QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
@@ -1543,7 +1544,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
         #TODO:자동로그인
-        self.MyLogin()
+        try:
+            self.MyLogin()
+        except Exception as e:
+            logger.info("MyLogin's Error: %s", e)
+
 
     def OnClockTick(self):
         current = datetime.datetime.now()
@@ -1727,7 +1732,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def OnLogin(self, code, msg):
         if code == '0000':
-            self.statusbar.showMessage("로그인 되었습니다.")
+            if self.mAutoMode :
+                self.RobotRun()
+                self.RobotView()
+            self.statusbar.showMessage("로그인 되었습니다.(%s:%s)" % ("self.mAutoMode", self.mAutoMode))
         else:
             self.statusbar.showMessage("%s %s" % (code, msg))
 
@@ -2210,10 +2218,19 @@ if __name__ == "__main__":
     logger.debug("=============================================================================")
     logger.info("LOG START")
 
+    AUTOMODE = False
+    while len(sys.argv) > 1:
+        if len(sys.argv) > 1 and '-a' in sys.argv[1]:
+            AUTOMODE = True
+
+        sys.argv.pop(1)
+
+    logger.debug("%s:%s" % ("AUTOMODE", AUTOMODE))
+
     app = QApplication(sys.argv)
     app.setQuitOnLastWindowClosed(True)
 
-    window = MainWindow()
+    window = MainWindow(autoMode = AUTOMODE)
     window.show()
 
     QTimer().singleShot(3, window.OnQApplicationStarted)
