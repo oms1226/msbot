@@ -7,7 +7,7 @@ PyQt5==5.11.2
 PyQt5-sip==4.19.12
 python-dateutil==2.7.3
 pytz==2018.5
-pywin32==223
+pywin32==301
 requests==2.19.1
 six==1.11.0
 urllib3==1.23
